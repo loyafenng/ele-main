@@ -8,19 +8,19 @@
     </div>
     <div class="item">
       <router-link to="/finds">
-        <i class="find" :class="{'active': 1 === footerIndex}"></i>
+        <i class="find" :class="{'active': 1 === idx}"></i>
         <span>发现</span>
       </router-link>
     </div>
     <div class="item">
       <router-link to="/orders">
-        <i class="order" :class="{'active': 3 === footerIndex}"></i>
+        <i class="order" :class="{'active': 3 === idx}"></i>
         <span>订单</span>
       </router-link>
     </div>
     <div class="item">
       <router-link to="/myinfo">
-        <i class="user" :class="{'active': 4 === footerIndex}"></i>
+        <i class="user" :class="{'active': 4 === idx}"></i>
         <span>我的</span>
       </router-link>
     </div>
@@ -30,8 +30,18 @@
 <script type="text/ecmascript-6">
   export default {
     props: ['footerIndex'],
-    computed: {
-      footerIndex() {
+    data() {
+      return {
+        idx: (() => {
+          console.log(this.footerIndex);
+          return this.footerIndex;
+        })()
+      };
+    },
+    watch: {
+      footerIndex(val) {
+        console.log(val);
+        this.idx = val;
       }
     }
   };
