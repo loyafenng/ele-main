@@ -2,40 +2,36 @@
   <div class="menu-item" ref = "footer">
     <div class="item">
       <router-link to="/foods">
-        <i class="ele" :class="{'active': 2 === footerIndex}"></i>
+        <i class="ele" :class="{'active': '1' === idx}"></i>
         <span>外卖</span>
       </router-link>
     </div>
     <div class="item">
       <router-link to="/finds">
-        <i class="find" :class="{'active': 1 === idx}"></i>
+        <i class="find" :class="{'active': '2' === idx}"></i>
         <span>发现</span>
       </router-link>
     </div>
     <div class="item">
       <router-link to="/orders">
-        <i class="order" :class="{'active': 3 === idx}"></i>
+        <i class="order" :class="{'active': '3' === idx}"></i>
         <span>订单</span>
       </router-link>
     </div>
     <div class="item">
       <router-link to="/myinfo">
-        <i class="user" :class="{'active': 4 === idx}"></i>
+        <i class="user" :class="{'active': '4' === idx}"></i>
         <span>我的</span>
       </router-link>
     </div>
   </div>
 </template>
-
 <script type="text/ecmascript-6">
   export default {
     props: ['footerIndex'],
     data() {
       return {
-        idx: (() => {
-          console.log(this.footerIndex);
-          return this.footerIndex;
-        })()
+        idx: this.footerIndex
       };
     },
     watch: {

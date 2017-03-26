@@ -195,6 +195,9 @@ export default {
 	color: #999;
 	font-size: .12rem;
 }
+.foods .list-sec .support{
+	cursor: pointer;
+}
 .foods .list-sec .support span{
 	display: inline-block;
 	height: .12rem;
